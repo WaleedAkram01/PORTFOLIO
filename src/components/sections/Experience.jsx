@@ -15,10 +15,10 @@ const TimelineItem = ({ item, index }) => {
             viewport={{ once: true }}
             transition={{ delay: index * 0.2 }}
         >
-            <div className={`flex items-center gap-8 ${isEven ? 'md:flex-row' : 'md:flex-row-reverse'}`}>
+            <div className={`flex flex-col gap-4 md:items-center md:gap-8 ${isEven ? 'md:flex-row' : 'md:flex-row-reverse'}`}>
                 {/* Content */}
                 <motion.div
-                    className="flex-1"
+                    className="w-full md:flex-1"
                     whileHover={{ scale: 1.02 }}
                 >
                     <div className="glass-effect p-6 rounded-2xl border border-primary-500/20 hover:border-primary-500/40 transition-all">
@@ -32,7 +32,7 @@ const TimelineItem = ({ item, index }) => {
                                     )}
                                 </div>
                                 <div>
-                                    <h3 className="text-xl font-bold">{item.title}</h3>
+                                    <h3 className="text-lg md:text-xl font-bold">{item.title}</h3>
                                     <p className="text-accent-cyan font-medium">{item.company}</p>
                                 </div>
                             </div>
@@ -66,15 +66,15 @@ const TimelineItem = ({ item, index }) => {
                 </div>
 
                 {/* Year */}
-                <div className="flex-1">
+                <div className="w-full md:flex-1 order-first md:order-none">
                     <motion.div
-                        className={`${isEven ? 'md:text-left' : 'md:text-right'}`}
+                        className={`text-left ${isEven ? 'md:text-left' : 'md:text-right'}`}
                         initial={{ opacity: 0, x: isEven ? 20 : -20 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: index * 0.2 + 0.2 }}
                     >
-                        <span className="inline-block glass-effect px-6 py-3 rounded-full font-bold text-primary-400">
+                        <span className="inline-block glass-effect px-4 py-2 md:px-6 md:py-3 rounded-full font-bold text-sm md:text-base text-primary-400">
                             {item.year}
                         </span>
                     </motion.div>
@@ -106,7 +106,7 @@ export const Experience = () => {
 
                 <div className="max-w-5xl mx-auto">
                     {/* Timeline */}
-                    <div className="relative space-y-16">
+                    <div className="relative space-y-8 md:space-y-16">
                         {/* Center Line for Desktop */}
                         <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary-500/20 via-primary-500/50 to-primary-500/20 transform -translate-x-1/2" />
 
@@ -122,9 +122,9 @@ export const Experience = () => {
                         whileInView={{ opacity: 1, scale: 1 }}
                         viewport={{ once: true }}
                     >
-                        <div className="glass-effect px-8 py-4 rounded-full border border-primary-500/30 flex items-center gap-2">
+                        <div className="glass-effect px-4 py-3 md:px-8 md:py-4 rounded-full border border-primary-500/30 flex items-center gap-2 text-center">
                             <div className="w-2 h-2 bg-primary-500 rounded-full animate-pulse" />
-                            <span className="font-semibold">Currently building amazing things</span>
+                            <span className="font-semibold text-sm md:text-base">Currently building amazing things</span>
                         </div>
                     </motion.div>
                 </div>

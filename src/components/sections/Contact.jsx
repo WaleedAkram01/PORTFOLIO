@@ -100,13 +100,13 @@ export const Contact = () => {
                     subtitle="Let's work together"
                 />
 
-                <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
+                <div className="grid lg:grid-cols-2 gap-8 md:gap-12 max-w-6xl mx-auto">
                     {/* Contact Info */}
                     <motion.div
                         {...fadeInUp}
                     >
                         <div className="mb-8">
-                            <h3 className="text-2xl md:text-3xl font-bold mb-4">
+                            <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-4 leading-tight">
                                 Let's create something{' '}
                                 <span className="gradient-text">amazing together</span>
                             </h3>
@@ -122,19 +122,19 @@ export const Contact = () => {
                                 <motion.a
                                     key={index}
                                     href={info.href}
-                                    className="flex items-center gap-4 glass-effect p-5 rounded-2xl border border-primary-500/20 hover:border-primary-500/40 transition-all group"
+                                    className="flex items-center gap-3 sm:gap-4 glass-effect p-4 sm:p-5 rounded-2xl border border-primary-500/20 hover:border-primary-500/40 transition-all group"
                                     initial={{ opacity: 0, x: -20 }}
                                     whileInView={{ opacity: 1, x: 0 }}
                                     viewport={{ once: true }}
                                     transition={{ delay: index * 0.1 }}
                                     whileHover={{ x: 5 }}
                                 >
-                                    <div className="p-3 rounded-xl bg-primary-900/30 border border-primary-500/30 group-hover:border-primary-500/60 transition-colors">
+                                    <div className="p-2 sm:p-3 rounded-xl bg-primary-900/30 border border-primary-500/30 group-hover:border-primary-500/60 transition-colors">
                                         <info.icon className="text-xl text-primary-400" />
                                     </div>
-                                    <div>
+                                    <div className="min-w-0">
                                         <p className="text-sm text-gray-400">{info.title}</p>
-                                        <p className="font-semibold text-white">{info.value}</p>
+                                        <p className="font-semibold text-white text-sm sm:text-base break-words">{info.value}</p>
                                     </div>
                                 </motion.a>
                             ))}
@@ -142,7 +142,7 @@ export const Contact = () => {
 
                         {/* Decorative Element */}
                         <motion.div
-                            className="mt-12 glass-effect p-8 rounded-2xl border border-primary-500/20"
+                            className="mt-8 md:mt-12 glass-effect p-6 md:p-8 rounded-2xl border border-primary-500/20"
                             initial={{ opacity: 0, scale: 0.9 }}
                             whileInView={{ opacity: 1, scale: 1 }}
                             viewport={{ once: true }}
@@ -159,7 +159,7 @@ export const Contact = () => {
                         {...fadeInUp}
                         transition={{ delay: 0.2 }}
                     >
-                        <form onSubmit={handleSubmit} className="space-y-6">
+                        <form onSubmit={handleSubmit} className="space-y-5 md:space-y-6">
                             <div>
                                 <label className="block text-sm font-semibold mb-2">Name</label>
                                 <motion.input
@@ -168,7 +168,7 @@ export const Contact = () => {
                                     value={formData.name}
                                     onChange={handleChange}
                                     required
-                                    className="w-full px-6 py-4 glass-effect rounded-xl border border-primary-500/20 focus:border-primary-500/60 focus:outline-none transition-all text-white placeholder-gray-500"
+                                    className="w-full px-4 md:px-6 py-3 md:py-4 glass-effect rounded-xl border border-primary-500/20 focus:border-primary-500/60 focus:outline-none transition-all text-white placeholder-gray-500"
                                     placeholder="Your name"
                                     whileFocus={{ scale: 1.01 }}
                                 />
@@ -182,7 +182,7 @@ export const Contact = () => {
                                     value={formData.email}
                                     onChange={handleChange}
                                     required
-                                    className="w-full px-6 py-4 glass-effect rounded-xl border border-primary-500/20 focus:border-primary-500/60 focus:outline-none transition-all text-white placeholder-gray-500"
+                                    className="w-full px-4 md:px-6 py-3 md:py-4 glass-effect rounded-xl border border-primary-500/20 focus:border-primary-500/60 focus:outline-none transition-all text-white placeholder-gray-500"
                                     placeholder="your.email@example.com"
                                     whileFocus={{ scale: 1.01 }}
                                 />
@@ -196,7 +196,7 @@ export const Contact = () => {
                                     value={formData.subject}
                                     onChange={handleChange}
                                     required
-                                    className="w-full px-6 py-4 glass-effect rounded-xl border border-primary-500/20 focus:border-primary-500/60 focus:outline-none transition-all text-white placeholder-gray-500"
+                                    className="w-full px-4 md:px-6 py-3 md:py-4 glass-effect rounded-xl border border-primary-500/20 focus:border-primary-500/60 focus:outline-none transition-all text-white placeholder-gray-500"
                                     placeholder="Project inquiry"
                                     whileFocus={{ scale: 1.01 }}
                                 />
@@ -209,8 +209,8 @@ export const Contact = () => {
                                     value={formData.message}
                                     onChange={handleChange}
                                     required
-                                    rows="5"
-                                    className="w-full px-6 py-4 glass-effect rounded-xl border border-primary-500/20 focus:border-primary-500/60 focus:outline-none transition-all text-white placeholder-gray-500 resize-none"
+                                    rows="4"
+                                    className="w-full px-4 md:px-6 py-3 md:py-4 glass-effect rounded-xl border border-primary-500/20 focus:border-primary-500/60 focus:outline-none transition-all text-white placeholder-gray-500 resize-none"
                                     placeholder="Tell me about your project..."
                                     whileFocus={{ scale: 1.01 }}
                                 />

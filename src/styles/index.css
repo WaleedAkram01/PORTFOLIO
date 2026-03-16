@@ -1,0 +1,161 @@
+@import url("https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=Orbitron:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg-primary: #0b0f19;
+    --bg-secondary: #13182b;
+    --text-primary: #f9fafb;
+    --text-secondary: #9ca3af;
+    --accent-cyan: #06b6d4;
+    --accent-purple: #a855f7;
+    --accent-neon: #00fff7;
+    --border-color: #1f2937;
+  }
+
+  * {
+    border-color: var(--border-color);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-dark-bg text-gray-100;
+    font-family: "Sora", sans-serif;
+    overflow-x: hidden;
+  }
+
+  /* Custom Scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-dark-bg;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-primary-600 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-primary-500;
+  }
+}
+
+@layer components {
+  .glass-effect {
+    @apply bg-white/5 backdrop-blur-xl border border-white/10;
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary-400 via-accent-cyan to-accent-purple bg-clip-text text-transparent;
+  }
+
+  .glow-border {
+    @apply border border-primary-500/30 shadow-[0_0_20px_rgba(99,102,241,0.3)];
+  }
+
+  .section-padding {
+    @apply py-20 md:py-32 px-6 md:px-12 lg:px-24;
+  }
+
+  .container-custom {
+    @apply max-w-7xl mx-auto;
+  }
+
+  /* Animated Background */
+  .animated-gradient {
+    background: linear-gradient(
+      -45deg,
+      #0b0f19,
+      #1e1b4b,
+      #312e81,
+      #4338ca,
+      #0b0f19
+    );
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+  }
+
+  /* Floating particles */
+  .particle {
+    position: absolute;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(99, 102, 241, 0.8), transparent);
+    animation: float 6s ease-in-out infinite;
+  }
+
+  /* Button Hover Effect */
+  .btn-magnetic {
+    @apply relative overflow-hidden transition-all duration-300;
+  }
+
+  .btn-magnetic::before {
+    content: "";
+    @apply absolute inset-0 bg-gradient-to-r from-primary-500 to-accent-cyan opacity-0 transition-opacity duration-300;
+  }
+
+  .btn-magnetic:hover::before {
+    @apply opacity-20;
+  }
+
+  /* Card hover tilt */
+  .card-tilt {
+    @apply transition-all duration-300;
+    transform-style: preserve-3d;
+  }
+
+  .card-tilt:hover {
+    transform: scale(1.02);
+  }
+
+  /* Neon text */
+  .neon-text {
+    text-shadow:
+      0 0 10px rgba(99, 102, 241, 0.8),
+      0 0 20px rgba(99, 102, 241, 0.6),
+      0 0 30px rgba(99, 102, 241, 0.4);
+  }
+
+  /* Grid Pattern Background */
+  .grid-pattern {
+    background-image:
+      linear-gradient(rgba(99, 102, 241, 0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(99, 102, 241, 0.05) 1px, transparent 1px);
+    background-size: 50px 50px;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Loading Screen */
+.loading-screen {
+  @apply fixed inset-0 bg-dark-bg z-50 flex items-center justify-center;
+  animation: fadeOut 0.5s ease-out 2s forwards;
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+    pointer-events: none;
+  }
+}
+
+/* Custom Cursor (optional enhancement) */
+.custom-cursor {
+  @apply fixed w-8 h-8 rounded-full border-2 border-primary-500 pointer-events-none z-[9999] mix-blend-difference;
+  transition: transform 0.2s ease-out;
+}
+
+.custom-cursor.clicked {
+  @apply scale-75;
+}

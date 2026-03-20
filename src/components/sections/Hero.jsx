@@ -4,9 +4,11 @@ import { FaArrowDown, FaGithub, FaLinkedin } from 'react-icons/fa';
 import { Button } from '../ui/Button';
 import { fadeInUp, staggerContainer } from '@/utils/animations';
 
+const PROFILE_IMAGE = '/waleed%20image.jpeg';
+
 export const Hero = () => {
     return (
-        <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
+        <section id="home" className="relative min-h-[100svh] pt-24 md:pt-28 flex items-center justify-center overflow-hidden">
             {/* Animated Background */}
             <div className="absolute inset-0 animated-gradient opacity-50" />
             <div className="absolute inset-0 grid-pattern" />
@@ -36,7 +38,7 @@ export const Hero = () => {
 
             {/* Content */}
             <motion.div
-                className="container-custom px-6 relative z-10"
+                className="container-custom px-6 pb-12 md:pb-8 relative z-10"
                 variants={staggerContainer}
                 initial="initial"
                 animate="animate"
@@ -44,16 +46,35 @@ export const Hero = () => {
                 <div className="max-w-4xl mx-auto text-center">
                     {/* Greeting */}
                     <motion.div
-                        className="inline-flex items-center gap-2 glass-effect px-6 py-3 rounded-full mb-6"
+                        className="inline-flex items-center gap-2 glass-effect px-5 py-2.5 rounded-full mb-4 md:mb-6"
                         {...fadeInUp}
                     >
                         <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
                         <span className="text-sm md:text-base font-medium">Available for opportunities</span>
                     </motion.div>
 
+                    {/* Profile Image */}
+                    <motion.div
+                        className="mb-5 md:mb-7 relative"
+                        {...fadeInUp}
+                        transition={{ delay: 0.15 }}
+                    >
+                        <div className="absolute inset-0 mx-auto w-28 h-28 sm:w-36 sm:h-36 md:w-44 md:h-44 rounded-full bg-accent-cyan/30 blur-2xl" />
+                        <div className="relative mx-auto w-28 h-28 sm:w-36 sm:h-36 md:w-44 md:h-44 rounded-full p-[3px] bg-gradient-to-br from-primary-500 via-accent-cyan to-accent-purple shadow-[0_0_45px_rgba(34,211,238,0.35)]">
+                            <div className="w-full h-full rounded-full bg-dark-bg/60 p-[3px]">
+                                <img
+                                    src={PROFILE_IMAGE}
+                                    alt="Waleed Akram"
+                                    className="w-full h-full rounded-full object-cover object-top"
+                                    loading="eager"
+                                />
+                            </div>
+                        </div>
+                    </motion.div>
+
                     {/* Main Heading */}
                     <motion.h1
-                        className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6"
+                        className="text-4xl md:text-6xl lg:text-7xl font-bold mb-4 md:mb-6"
                         {...fadeInUp}
                         transition={{ delay: 0.2 }}
                     >
@@ -70,7 +91,7 @@ export const Hero = () => {
 
                     {/* Subtitle */}
                     <motion.div
-                        className="text-xl md:text-3xl font-semibold mb-4 text-gray-300"
+                        className="text-xl md:text-3xl font-semibold mb-3 md:mb-4 text-gray-300"
                         {...fadeInUp}
                         transition={{ delay: 0.3 }}
                     >
@@ -80,7 +101,7 @@ export const Hero = () => {
 
                     {/* Description */}
                     <motion.p
-                        className="text-base md:text-xl text-gray-400 max-w-2xl mx-auto mb-10"
+                        className="text-base md:text-lg text-gray-400 max-w-2xl mx-auto mb-7 md:mb-9"
                         {...fadeInUp}
                         transition={{ delay: 0.4 }}
                     >
@@ -91,7 +112,7 @@ export const Hero = () => {
 
                     {/* CTA Buttons */}
                     <motion.div
-                        className="flex flex-wrap gap-4 justify-center mb-16"
+                        className="flex flex-wrap gap-4 justify-center mb-8 md:mb-10"
                         {...fadeInUp}
                         transition={{ delay: 0.5 }}
                     >
@@ -110,8 +131,7 @@ export const Hero = () => {
                         transition={{ delay: 0.6 }}
                     >
                         {[
-                            { icon: FaGithub, href: 'https://github.com', label: 'GitHub' },
-                            { icon: FaLinkedin, href: 'https://linkedin.com', label: 'LinkedIn' },
+                            { icon: FaGithub, href: 'https://github.com/WaleedAkram01', label: 'GitHub' },
                         ].map((social, index) => (
                             <motion.a
                                 key={index}
@@ -131,7 +151,7 @@ export const Hero = () => {
 
                 {/* Scroll Indicator */}
                 <motion.div
-                    className="absolute bottom-10 left-1/2 transform -translate-x-1/2"
+                    className="absolute bottom-5 md:bottom-8 left-1/2 transform -translate-x-1/2"
                     animate={{ y: [0, 10, 0] }}
                     transition={{ duration: 1.5, repeat: Infinity }}
                 >

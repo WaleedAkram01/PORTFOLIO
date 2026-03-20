@@ -90,35 +90,35 @@ export const skills = {
 
 export const experience = [
   {
-    year: "2024 - Present",
-    title: "Senior Full Stack Developer",
-    company: "Tech Innovators Inc.",
+    year: "2025 - Present",
+    title: "Full Stack Developer",
+    company: "BYTESCRIPTERZ",
     description:
-      "Leading development of enterprise web applications using React, Node.js, and cloud technologies. Mentoring junior developers and architecting scalable solutions.",
-    skills: ["React", "Node.js", "AWS", "PostgreSQL"],
+      "Developing custom CMS solutions using Odoo and Python. Responsible for building responsive frontends with React/Next.js and managing server-side deployments on AWS EC2. I focus on bridging complex backend logic with user-friendly CMS controls for business applications.",
+    skills: ["React", "Next.js", "Odoo", "AWS(EC2)"],
+  },
+  {
+    year: "2025",
+    title: "Junior Developer",
+    company: "PacsLink",
+    description:
+      "Built and maintained web applications. Collaborated with cross-functional teams to deliver high-quality software products.",
+    skills: [
+      "HTML",
+      "CSS",
+      "Tailwind CSS",
+      "JavaScript",
+      "React",
+      "Next.js",
+      "Git",
+    ],
   },
   {
     year: "2022 - 2024",
-    title: "Frontend Developer",
-    company: "Digital Solutions Co.",
-    description:
-      "Developed responsive web applications with modern frameworks. Implemented complex UI/UX designs and optimized application performance.",
-    skills: ["React", "TypeScript", "Tailwind CSS", "Next.js"],
-  },
-  {
-    year: "2021 - 2022",
-    title: "Junior Developer",
-    company: "StartUp Labs",
-    description:
-      "Built and maintained web applications. Collaborated with cross-functional teams to deliver high-quality software products.",
-    skills: ["JavaScript", "React", "CSS", "Git"],
-  },
-  {
-    year: "2020 - 2021",
     title: "Learning Journey",
     company: "Self-Taught",
     description:
       "Intensive learning of web development technologies, building personal projects, and contributing to open source.",
-    skills: ["HTML", "CSS", "JavaScript", "React"],
+    skills: ["HTML", "CSS", "Tailwind CSS", "JavaScript", "React"],
   },
 ];

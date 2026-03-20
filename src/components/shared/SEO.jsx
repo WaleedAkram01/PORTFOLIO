@@ -2,10 +2,10 @@ import React from 'react';
 import { Helmet } from 'react-helmet-async';
 
 export const SEO = () => {
-    const siteTitle = "Your Name - Full Stack Developer Portfolio";
-    const siteDescription = "Full Stack Developer specializing in React, Node.js, and modern web technologies. Building exceptional digital experiences with clean code and beautiful design.";
-    const siteUrl = "https://yourportfolio.com";
-    const siteImage = "https://yourportfolio.com/og-image.jpg";
+    const siteTitle = "Waleed Akram Jarral";
+    const siteDescription = "Waleed Akram Jarral - Full Stack Developer portfolio showcasing projects, skills, experience, and contact information.";
+    const siteUrl = "https://portfolio-peach-six-pfyjtg4nlj.vercel.app";
+    const siteImage = `${siteUrl}/favicon.svg`;
 
     return (
         <Helmet>
@@ -14,7 +14,7 @@ export const SEO = () => {
             <meta name="title" content={siteTitle} />
             <meta name="description" content={siteDescription} />
             <meta name="keywords" content="full stack developer, react developer, web developer, portfolio, UI/UX, frontend, backend, javascript" />
-            <meta name="author" content="Your Name" />
+            <meta name="author" content="Waleed Akram Jarral" />
             <meta name="viewport" content="width=device-width, initial-scale=1.0" />
             <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
             <meta name="language" content="English" />
@@ -34,7 +34,7 @@ export const SEO = () => {
             <meta property="twitter:image" content={siteImage} />
 
             {/* Favicon */}
-            <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+            <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
             {/* Theme Color */}
             <meta name="theme-color" content="#6366f1" />
